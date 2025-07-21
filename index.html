@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LBX Sul de Minas - Torneios de Xadrez</title>
+  <meta name="description" content="Informações atualizadas e resultados dos torneios de xadrez no Sul de Minas." />
+  <meta name="keywords" content="Xadrez, Torneios, Sul de Minas, LBX, Resultados" />
+  <meta name="author" content="LBX Sul de Minas" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f9fafb;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 2rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    .nav-link {
+      color: white !important;
+      font-weight: 600;
+    }
+
+    .nav-link:hover {
+      color: #0d6efd !important;
+    }
+
+    main {
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .btn-primary {
+      background-color: #0d6efd;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0b5ed7;
+    }
+
+    .card {
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .gallery-img {
+      cursor: pointer;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    /* Newsletter */
+    .newsletter input[type="email"] {
+      border-radius: 50px 0 0 50px;
+      border: 1px solid #ced4da;
+      padding: 0.75rem 1.5rem;
+      width: 100%;
+      max-width: 350px;
+      outline: none;
+    }
+
+    .newsletter button {
+      border-radius: 0 50px 50px 0;
+      padding: 0.75rem 1.5rem;
+    }
+
+    /* Resultados toggle */
+    #resultsLinks {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    /* Google Maps responsivo */
+    .map-responsive {
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+      height: 0;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .map-responsive iframe {
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      border: 0;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="d-flex flex-column flex-md-row align-items-center justify-content-between px-4">
+    <h1>LBX Sul de Minas</h1>
+    <nav>
+      <a href="#sobre" class="nav-link me-3">Sobre</a>
+      <a href="#torneios" class="nav-link me-3">Próximo Torneio</a>
+      <a href="#resultados" class="nav-link me-3">Resultados</a>
+      <a href="#galeria" class="nav-link me-3">Galeria</a>
+      <a href="#contato" class="nav-link">Contato</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- Sobre -->
+    <section id="sobre" data-aos="fade-up">
+      <div class="card p-4">
+        <h2>Sobre o LBX Sul de Minas</h2>
+        <p>
+          A Liga Brasileira de Xadrez Sul de Minas organiza torneios locais com o objetivo de fomentar a
+          prática do xadrez, promover a integração entre os jogadores e divulgar os resultados para toda a comunidade.
+        </p>
+      </div>
+    </section>
+
+    <!-- Próximo Torneio -->
+    <section id="torneios" data-aos="fade-up" data-aos-delay="100">
+      <div class="card p-4">
+        <h2>Próximo Torneio: Itanhandu - MG</h2>
+        <p><strong>Data:</strong> 23 de Agosto</p>
+        <p>Prepare-se para mais um grande evento de xadrez no Sul de Minas!</p>
+        <div class="map-responsive" aria-label="Mapa do local do torneio">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3710.938829813914!2d-44.19061548490344!3d-22.13583903499662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaef90df6d5c6d95%3A0x4250f2456ee66e70!2sItanhandu%2C%20Minas%20Gerais!5e0!3m2!1spt-BR!2sbr!4v1690020000000!5m2!1spt-BR!2sbr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa do torneio em Itanhandu"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resultados -->
+    <section id="resultados" data-aos="fade-up" data-aos-delay="200">
+      <div class="card p-4">
+        <h2>Resultados dos Torneios Anteriores</h2>
+        <button class="btn btn-primary" id="toggleResultsBtn" aria-expanded="false" aria-controls="resultsLinks">
+          Mostrar / Ocultar Resultados
+        </button>
+        <div id="resultsLinks" class="mt-3" aria-live="polite" role="region">
+          <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1214820" target="_blank" rel="noopener"
+            class="d-block mb-2">Copa de Xadrez SVM 2025</a>
+          <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1197857" target="_blank" rel="noopener"
+            class="d-block mb-2">II Copa Cambuquira 2025</a>
+          <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1184185" target="_blank" rel="noopener"
+            class="d-block mb-2">4ª Copa Xadrez de Ouro de Paraguaçu 2025</a>
+          <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1164979" target="_blank" rel="noopener"
+            class="d-block mb-2">III Copa São Lourenço 2025</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria" data-aos="fade-up" data-aos-delay="300">
+      <div class="card p-4">
+        <h2>Galeria de Fotos</h2>
+        <div class="row g-3">
+          <div class="col-6 col-md-4 col-lg-3">
+            <img src="copa-xadrez-sao-vicente.jpg" alt="Cartaz do torneio em São Vicente de Minas" class="gallery-img w-100" tabindex="0" />
+          </div>
+          <!-- Você pode adicionar mais imagens aqui -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section id="newsletter" data-aos="fade-up" data-aos-delay="400">
+      <div class="card p-4 text-center">
+        <h2>Inscreva-se na nossa Newsletter</h2>
+        <form class="newsletter d-flex justify-content-center flex-wrap" onsubmit="event.preventDefault(); alert('Obrigado pela inscrição!');">
+          <input type="email" class="form-control mb-2 mb-sm-0" placeholder="Seu melhor e-mail" aria-label="E-mail para newsletter" required />
+          <button type="submit" class="btn btn-primary ms-sm-2">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" data-aos="fade-up" data-aos-delay="500">
+      <div class="card p-4">
+        <h2>Contato</h2>
+        <p>
+          <i class="fas fa-phone"></i> WhatsApp: <a href="https://wa.me/5535999291224" target="_blank">(35) 99929-1224</a> |
+          <a href="https://wa.me/5535997648241" target="_blank">(35) 99764-8241</a>
+        </p>
+        <p>
+          <i class="fab fa-instagram"></i> Instagram: <a href="https://instagram.com/betomeirellesxadrez" target="_blank">@betomeirellesxadrez</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 LBX Sul de Minas. Todos os direitos reservados.</p>
+    <p><i class="fab fa-instagram"></i> <a href="https://instagram.com/betomeirellesxadrez" target="_blank" class="text-white text-decoration-none">@betomeirellesxadrez</a></p>
+  </footer>
+
+  <!-- Modal para Galeria -->
+  <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-4">
+        <div class="modal-header">
+          <h5 class="modal-title" id="galleryModalLabel">Foto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="" alt="Imagem da galeria ampliada" id="modalImage" class="img-fluid rounded" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Inicializa animações AOS
+    AOS.init();
+
+    // Toggle resultados
+    const toggleBtn = document.getElementById('toggleResultsBtn');
+    const resultsDiv = document.getElementById('resultsLinks');
+    toggleBtn.addEventListener('click', () => {
+      const isHidden = resultsDiv.style.display === 'none' || resultsDiv.style.display === '';
+      resultsDiv.style.display = isHidden ? 'block' : 'none';
+      toggleBtn.setAttribute('aria-expanded', isHidden);
+    });
+
+    // Modal galeria
+    const galleryImages = document.querySelectorAll('.gallery-img');
+    const modalImage = document.getElementById('modalImage');
+    const galleryModal = new bootstrap.Modal(document.getElementById('galleryModal'));
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        modalImage.src = img.src;
+        modalImage.alt = img.alt;
+        galleryModal.show();
+      });
+      // Também abre modal no teclado com Enter
+      img.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          modalImage.src = img.src;
+          modalImage.alt = img.alt;
+          galleryModal.show();
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
