@@ -26,6 +26,13 @@
       color: #333;
       line-height: 1.6;
       scroll-behavior: smooth;
+
+      /* IMAGEM DE FUNDO ADICIONADA */
+      background-image: url('3817fb8b-dcc0-4b38-892e-c7fdb9bca7de.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-attachment: fixed;
     }
 
     header {
@@ -120,7 +127,6 @@
       text-decoration: none;
     }
 
-    /* Seção Resultados com ícones e estilo */
     .results-list {
       display: flex;
       flex-direction: column;
@@ -155,7 +161,6 @@
       text-decoration: underline;
     }
 
-    /* Seção Calendário - estilo similar aos Resultados */
     .calendar-list {
       display: flex;
       flex-direction: column;
@@ -214,14 +219,12 @@
       background-color: #005fa3;
     }
 
-    /* Ícone calendário para os itens do calendário */
     .calendar-item i::before {
-      content: "\f073"; /* Unicode FontAwesome fa-calendar-alt */
+      content: "\f073";
       font-family: "Font Awesome 6 Free";
       font-weight: 900;
     }
 
-    /* Responsividade para celular */
     @media (max-width: 600px) {
       header h1 {
         font-size: 1.4rem;
