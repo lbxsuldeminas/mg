@@ -4,17 +4,182 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LBX Sul de Minas</title>
-  <meta name="description" content="Circuito de torneios de xadrez no Sul de Minas." />
-  <meta property="og:title" content="LBX Sul de Minas" />
-  <meta property="og:image" content="link-da-imagem.jpg" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <!-- Font Awesome para ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="estilo.css">
+  <style>
+    :root {
+      --primary-color: #1a1a1a;
+      --accent-color: #0077cc;
+      --light-bg: #f4f4f4;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--light-bg);
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #005fa3;
+    }
+
+    section#inicio {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 25px;
+      margin-bottom: 30px;
+    }
+
+    .card h2, .card h3 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    .contact a, .social a {
+      color: var(--accent-color);
+      text-decoration: none;
+      margin-right: 10px;
+      display: inline-block;
+    }
+
+    .contact a:hover, .social a:hover {
+      text-decoration: underline;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Seção Resultados com ícones e estilo */
+    .results-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .result-item {
+      display: flex;
+      align-items: center;
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      padding: 12px 18px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-left: 6px solid var(--accent-color);
+    }
+
+    .result-item i {
+      font-size: 24px;
+      color: var(--accent-color);
+      margin-right: 15px;
+      min-width: 30px;
+      text-align: center;
+    }
+
+    .result-item a {
+      color: var(--accent-color);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .result-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Botão toggle para resultados (removido pois não vai usar) */
+    /* @media responsivo */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.4rem;
+        flex-basis: 100%;
+        margin-bottom: 10px;
+      }
+
+      nav {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+
+  </style>
 </head>
 <body>
+
   <header>
     <h1>LBX Sul de Minas</h1>
-    <button class="menu-toggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
     <nav>
       <a href="#proximo-torneio">Próximo Torneio</a>
       <a href="#contatos">Contatos</a>
@@ -24,15 +189,19 @@
   </header>
 
   <section id="inicio">
+
+    <!-- Próximo Torneio -->
     <div class="card" id="proximo-torneio">
       <h2>Próximo Torneio: Itanhandu - MG</h2>
       <p><strong>Data:</strong> 23 de Agosto</p>
       <p>Prepare-se para mais um grande evento de xadrez no Sul de Minas!</p>
-      <button onclick="window.open('https://www.google.com/maps/place/Itanhandu,+MG','_blank')" class="map-button">
+      <button onclick="window.open('https://www.google.com/maps/place/Itanhandu,+MG','_blank')" 
+              style="background-color: var(--accent-color); color: white; border: none; padding: 10px 18px; border-radius: 8px; cursor: pointer; font-weight: 600;">
         Ver no Google Maps
       </button>
     </div>
 
+    <!-- Contatos -->
     <div class="card contact" id="contatos">
       <h3>Contatos</h3>
       <p>
@@ -47,27 +216,70 @@
       </p>
     </div>
 
+    <!-- Galeria de Fotos -->
     <div class="card" id="galeria">
       <h3><i class="fas fa-images"></i> Galeria de Fotos</h3>
       <div class="gallery">
-        <a href="copa-xadrez-sao-vicente.jpg" target="_blank">
-          <img src="copa-xadrez-sao-vicente.jpg" alt="Cartaz do torneio em São Vicente de Minas" />
-        </a>
-        <!-- Adicione mais imagens no mesmo formato -->
+        <img src="copa-xadrez-sao-vicente.jpg" alt="Cartaz do torneio em São Vicente de Minas" />
+        <!-- Você pode adicionar mais imagens aqui -->
       </div>
     </div>
 
+    <!-- Resultados dos torneios -->
     <div class="card" id="resultados">
-      <button class="toggle-button" id="toggleResultsBtn">Resultados dos Torneios Anteriores</button>
-      <div class="results-links" id="resultsLinks">
-        <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1103985" target="_blank">1ª Etapa : Recanto da Mata | Baependi 2025</a>
-        <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1144218" target="_blank">2ª Etapa : Caxambu 2025</a>
-        <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1164979" target="_blank">3ª Etapa : São Lourenço 2025</a>
-        <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1184185" target="_blank">4ª Etapa : Paraguaçu 2025</a>
-        <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1197857" target="_blank">5ª Etapa : Cambuquira 2025</a>
-        <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1214820" target="_blank">6ª Etapa : São Vicente de Minas 2025</a>
+      <h3><i class="fas fa-trophy"></i> Resultados dos Torneios Anteriores</h3>
+      <div class="results-list">
+        <div class="result-item">
+          <i class="fas fa-chess-king"></i>
+          <div>
+            <strong>1ª Etapa:</strong> Recanto da Mata | Baependi - 2025
+            <br />
+            <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1103985" target="_blank">Ver resultados</a>
+          </div>
+        </div>
+        <div class="result-item">
+          <i class="fas fa-chess-king"></i>
+          <div>
+            <strong>2ª Etapa:</strong> Caxambu - 2025
+            <br />
+            <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1144218" target="_blank">Ver resultados</a>
+          </div>
+        </div>
+        <div class="result-item">
+          <i class="fas fa-chess-king"></i>
+          <div>
+            <strong>3ª Etapa:</strong> São Lourenço - 2025
+            <br />
+            <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1164979" target="_blank">Ver resultados</a>
+          </div>
+        </div>
+        <div class="result-item">
+          <i class="fas fa-chess-king"></i>
+          <div>
+            <strong>4ª Etapa:</strong> Paraguaçu - 2025
+            <br />
+            <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1184185" target="_blank">Ver resultados</a>
+          </div>
+        </div>
+        <div class="result-item">
+          <i class="fas fa-chess-king"></i>
+          <div>
+            <strong>5ª Etapa:</strong> Cambuquira - 2025
+            <br />
+            <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1197857" target="_blank">Ver resultados</a>
+          </div>
+        </div>
+        <div class="result-item">
+          <i class="fas fa-chess-king"></i>
+          <div>
+            <strong>6ª Etapa:</strong> São Vicente de Minas - 2025
+            <br />
+            <a href="https://s3.chess-results.com/tnrWZ.aspx?lan=10&tno=1214820" target="_blank">Ver resultados</a>
+          </div>
+        </div>
       </div>
     </div>
+
   </section>
 
   <footer>
@@ -77,18 +289,5 @@
     </p>
   </footer>
 
-  <script>
-    const toggleBtn = document.getElementById('toggleResultsBtn');
-    const resultsDiv = document.getElementById('resultsLinks');
-    toggleBtn.addEventListener('click', () => {
-      resultsDiv.classList.toggle('open');
-    });
-
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('header nav');
-    menuToggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
-    });
-  </script>
 </body>
 </html>
