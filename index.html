@@ -14,7 +14,7 @@
   <style>
 /* ==================== Variáveis CSS ==================== */
 :root {
-  --primary-color: #1a1a1a;
+  --primary-color: #000000;
   --accent-color: #3399ff; /* azul mais vibrante para contraste */
   --light-bg: #f4f4f4;     /* não usado mais */
   --card-bg: #ffffff;       /* não usado mais */
@@ -45,18 +45,26 @@ header {
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center;          /* centraliza verticalmente */
+  justify-content: space-between; /* logo à esquerda, título+menu centralizados */
+  padding: 15px 20px;
   flex-wrap: wrap;
+  border-bottom: 2px solid #fff;
+
+   /* Xadrez de fundo */
+  background-image: repeating-conic-gradient(
+    rgba(255,255,255,0.1) 0% 25%,   /* quadrado branco com transparência */
+    transparent 0% 50%
+  );
+  background-size: 80px 80px;
 }
 
 header h1 {
   font-size: 1.8rem;
-  margin-bottom: 5px;
-  text-align: center;
-  width: 100%;
+  margin: 0 0 5px 0;
 }
 
+    
 nav {
   display: flex;
   gap: 15px;
@@ -361,6 +369,7 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
+  border-top: 2px solid #fff; /* contorno branco em cima */
 }
 
 footer a {
@@ -370,16 +379,18 @@ footer a {
 
 /* ==================== Responsividade ==================== */
 @media (max-width: 600px) {
-  header h1 {
-    font-size: 1.4rem;
-    flex-basis: 100%;
-    margin-bottom: 10px;
-  }
+ header h1 {
+  font-size: 1.8rem;
+  margin: 0 0 5px 0;
+  text-align: center;
+}
 
-  nav {
-    justify-content: center;
-    width: 100%;
-  }
+ nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;      /* centraliza links do menu */
+}
 
   .card {
     padding: 20px;
@@ -452,6 +463,19 @@ footer a {
   background-color: var(--accent-color);
   color: white;
 }
+   
+
+header img {
+  max-width: 120px;
+  height: auto;
+}
+
+   .header-text {
+  display: flex;
+  flex-direction: column;       /* título em cima, menu embaixo */
+  align-items: center;          /* centraliza horizontalmente */
+  flex: 1;                      /* ocupa espaço restante */
+}
 
   </style>
 </head>
@@ -459,8 +483,8 @@ footer a {
 <body>
   <!-- ==================== Header ==================== -->
   <header>
-    <!-- Logo -->
-    <img src="urlsite.png" alt="Logo" style="height: 113px; margin-right: 15px;" />
+  <img src="urlsite.png" alt="Logo" />
+  <div class="header-text">
     <h1>LBX Sul de Minas</h1>
     <nav>
       <a href="#proximo-torneio">Próximo Torneio</a>
@@ -470,8 +494,8 @@ footer a {
       <a href="#partidas-transmitidas">Partidas</a>
       <a href="#contatos">Contatos</a>
     </nav>
-  </header>
-
+  </div>
+</header>
   <!-- ==================== Seção Principal ==================== -->
   <section id="inicio">
 
@@ -986,4 +1010,3 @@ filterResults();
 
 </body>
 </html>
-
