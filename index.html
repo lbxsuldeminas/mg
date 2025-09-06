@@ -29,8 +29,8 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #000000; /* fundo do site */
-  color: #fff;                /* texto fora dos cards ficará branco */
+  background-color: #000000;
+  color: #fff;
   line-height: 1.6;
   scroll-behavior: smooth;
 }
@@ -45,15 +45,13 @@ header {
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;          /* centraliza verticalmente */
-  justify-content: space-between; /* logo à esquerda, título+menu centralizados */
+  align-items: center;
+  justify-content: space-between;
   padding: 15px 20px;
   flex-wrap: wrap;
   border-bottom: 2px solid #fff;
-
-   /* Xadrez de fundo */
   background-image: repeating-conic-gradient(
-    rgba(255,255,255,0.1) 0% 25%,   /* quadrado branco com transparência */
+    rgba(255,255,255,0.1) 0% 25%,
     transparent 0% 50%
   );
   background-size: 80px 80px;
@@ -64,7 +62,14 @@ header h1 {
   margin: 0 0 5px 0;
 }
 
-    
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+/* Menu normal (desktop) */
 nav {
   display: flex;
   gap: 15px;
@@ -84,6 +89,26 @@ nav a:hover {
   background-color: #005fa3;
 }
 
+/* Botão do menu (mobile) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.menu-toggle span {
+  font-size: 0.8rem;
+  margin-top: 4px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
 /* ==================== Seção principal ==================== */
 section#inicio {
   max-width: 1000px;
@@ -96,10 +121,10 @@ section#inicio {
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(5px);
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* sombra suave */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   padding: 25px;
   margin-bottom: 30px;
-  color: #333; /* texto dentro dos cards escuro */
+  color: #333;
 }
 
 .card h2, .card h3 {
@@ -119,7 +144,7 @@ section#inicio {
   padding: 20px 15px;
   width: 100%;
   box-sizing: border-box;
-  padding-top: 16px; /* ajuste da altura do card */
+  padding-top: 16px;
 }
 
 #calendario h2 {
@@ -292,7 +317,7 @@ section#inicio {
 }
 
 #contatos h3 {
-  margin-bottom: 8px; /* reduz espaço entre título e conteúdo */
+  margin-bottom: 8px;
 }
 
 .contact a, .social a {
@@ -306,7 +331,6 @@ section#inicio {
   text-decoration: underline;
 }
 
-/* Ícones de redes sociais na seção Contatos */
 .contact i.fab {
   font-size: 18px;
   color: #000000;
@@ -314,7 +338,6 @@ section#inicio {
   margin-right: 5px;
 }
 
-/* ==================== Torneio Header / Contagem regressiva ==================== */
 .torneio-header {
   display: flex;
   justify-content: space-between;
@@ -363,13 +386,12 @@ section#inicio {
   transform: scale(1.05);
 }
 
-/* ==================== Footer ==================== */
 footer {
   background-color: var(--primary-color);
   color: white;
   text-align: center;
   padding: 20px;
-  border-top: 2px solid #fff; /* contorno branco em cima */
+  border-top: 2px solid #fff;
 }
 
 footer a {
@@ -377,41 +399,8 @@ footer a {
   text-decoration: none;
 }
 
-/* ==================== Responsividade ==================== */
-@media (max-width: 600px) {
- header h1 {
-  font-size: 1.8rem;
-  margin: 0 0 5px 0;
-  text-align: center;
-}
-
- nav {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;      /* centraliza links do menu */
-}
-
-  .card {
-    padding: 20px;
-  }
-
-  /* Calendário - lista vertical */
-  .calendar-list {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  #calendario h2 {
-    font-size: 1.2rem;
-  }
-
-  .calendar-item {
-    min-width: auto;
-  }
-}
-
-    #bannerTorneio {
+/* ==================== Banner Torneio ==================== */
+#bannerTorneio {
   display: none;
   opacity: 0;
   transform: translateY(-10px);
@@ -424,13 +413,13 @@ footer a {
 }
 
 #proximo-torneio {
-  position: relative; /* necessário para a seta se posicionar corretamente */
+  position: relative;
 }
 
 .toggle-seta {
   position: absolute;
-  right: 15px;       /* distância da borda direita */
-  top: 50%;           /* centraliza verticalmente no card */
+  right: 15px;
+  top: 50%;
   transform: translateY(-50%);
   background: none;
   border: none;
@@ -439,10 +428,10 @@ footer a {
   cursor: pointer;
 }
 
-    .share-buttons {
+.share-buttons {
   position: absolute;
-  top: 10px; /* distância do topo do banner */
-  right: 10px; /* distância da direita */
+  top: 10px;
+  right: 10px;
   display: flex;
   gap: 10px;
 }
@@ -463,29 +452,92 @@ footer a {
   background-color: var(--accent-color);
   color: white;
 }
-   
 
 header img {
   max-width: 120px;
   height: auto;
 }
 
-   .header-text {
-  display: flex;
-  flex-direction: column;       /* título em cima, menu embaixo */
-  align-items: center;          /* centraliza horizontalmente */
-  flex: 1;                      /* ocupa espaço restante */
+/* ==================== Responsividade ==================== */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+    margin: 0 0 5px 0;
+    text-align: center;
+  }
+
+  nav {
+    display: none; /* esconde menu desktop */
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(0,0,0,0.9);
+    padding: 15px;
+    border-radius: 8px;
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    width: 200px;
+    text-align: right;
+    z-index: 1000;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle span {
+    font-size: 0.8rem;
+    margin-top: 4px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .header-text {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .calendar-list {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #calendario h2 {
+    font-size: 1.2rem;
+  }
+
+  .calendar-item {
+    min-width: auto;
+  }
 }
 
-  </style>
+     </style>
 </head>
-
 <body>
   <!-- ==================== Header ==================== -->
   <header>
   <img src="lbx.png" alt="Logo" />
   <div class="header-text">
     <h1>LBX Sul de Minas</h1>
+
+    <!-- Botão menu hamburguer (aparece só no mobile) -->
+    <button class="menu-toggle">
+      <i class="fas fa-bars"></i>
+      <span>MENU</span>
+    </button>
+
+    <!-- Navegação -->
     <nav>
       <a href="#proximo-torneio">Próximo Torneio</a>
       <a href="#calendario">Calendário</a>
@@ -496,9 +548,9 @@ header img {
     </nav>
   </div>
 </header>
+
   <!-- ==================== Seção Principal ==================== -->
   <section id="inicio">
-
 <!-- Próximo Torneio -->
 <div class="card" id="proximo-torneio">
   <div id="proximoTorneioConteudo">
@@ -1006,11 +1058,18 @@ function filterResults() {
 
 yearResultsFilter.addEventListener('change', filterResults);
 filterResults();
+
+// ===== Menu hamburguer =====
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('header nav');
+
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
+  
 </script>
 
 </body>
 </html>
-
-
 
 
