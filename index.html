@@ -521,7 +521,8 @@ header img {
     min-width: auto;
   }
 }
-
+    
+/* controla a abertura do banner em elas grandes */
     #bannerTorneio img {
   width: 100%;
   max-width: 700px; /* controla o tamanho máximo do banner */
@@ -531,6 +532,11 @@ header img {
   border-radius: 10px;
 }
 
+    @media (min-width: 1024px) {
+  #bannerTorneio img {
+    max-width: 600px; /* menor ainda no PC */
+  }
+}
 
      </style>
 </head>
@@ -1081,6 +1087,7 @@ menuToggle.addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 
