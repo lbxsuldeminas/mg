@@ -545,6 +545,28 @@ header img {
   box-sizing: border-box; /* garante que padding não quebre o tamanho */
 }
 
+    #sobreInfo p {
+  color: var(--primary-color);
+  margin-bottom: 10px; /* um pouco mais de espaço entre parágrafos */
+  line-height: 1.5; /* facilita leitura no mobile */
+  font-size: 1rem; /* tamanho base */
+}
+
+@media (max-width: 600px) {
+  #sobre h2 {
+    font-size: 1.5rem; /* reduz título no mobile */
+  }
+
+  #sobreInfo p {
+    font-size: 0.95rem; /* texto ligeiramente menor */
+  }
+
+  #toggleVideo {
+    width: 50px; /* botão menor no mobile */
+    height: 50px;
+  }
+}
+
      </style>
 </head>
 <body>
@@ -1185,6 +1207,7 @@ menuToggle.addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 
