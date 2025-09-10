@@ -545,6 +545,31 @@ header img {
   box-sizing: border-box; /* garante que padding não quebre o tamanho */
 }
 
+#ranking table, #ranking th, #ranking td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+#ranking tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* Linha inteira com cor */
+.ouro {
+  background: #ffd700 !important; /* dourado */
+  font-weight: bold;
+}
+
+.prata {
+  background: #c0c0c0 !important; /* prata */
+  font-weight: bold;
+}
+
+.bronze {
+  background: #cd7f32 !important; /* bronze */
+  font-weight: bold;
+}
+
      </style>
 </head>
 <body>
@@ -567,6 +592,7 @@ header img {
       <a href="#proximo-torneio">Próximo Torneio</a>
       <a href="#calendario">Calendário</a>
       <a href="#galeria">Galeria de Fotos</a>
+      <a href="#ranking">Ranking</a>
       <a href="#resultados">Resultados</a>
       <a href="#partidas-transmitidas">Partidas</a>
       <a href="#contatos">Contatos</a>
@@ -759,7 +785,58 @@ header img {
   </div>
 </div>
 
+<!-- Ranking -->
+<!-- Ranking -->
+<div class="card" id="ranking">
+  <h2 style="color: var(--primary-color); margin:0 0 15px 0; font-size:1.5rem; display:flex; align-items:center; gap:8px;">
+    <i class="fas fa-trophy"></i>
+    Ranking de Jogadores
+  </h2>
+  
+  <div id="rankingConteudo" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
     
+    <!-- Ranking Masculino -->
+    <div class="rankingTabela" style="flex:1; min-width:250px;">
+      <h3 style="color: var(--primary-color); text-align:center;">👨 Masculino</h3>
+      <table style="width:100%; border-collapse: collapse; text-align:center;">
+        <thead>
+          <tr style="background: var(--primary-color); color:white;">
+            <th>Pos</th>
+            <th>Jogador</th>
+            <th>Pontos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="ouro"><td>1º</td><td>Cristian da Silva Romão</td><td>2352</td></tr>
+          <tr class="prata"><td>2º</td><td>Ezequias Morais de Lima Pereira</td><td>2343</td></tr>
+          <tr class="bronze"><td>3º</td><td>Júlio Reinaldo dos Santos</td><td>2331</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Ranking Feminino -->
+    <div class="rankingTabela" style="flex:1; min-width:250px;">
+      <h3 style="color: var(--primary-color); text-align:center;">👩 Feminino</h3>
+      <table style="width:100%; border-collapse: collapse; text-align:center;">
+        <thead>
+          <tr style="background: var(--primary-color); color:white;">
+            <th>Pos</th>
+            <th>Jogadora</th>
+            <th>Pontos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="ouro"><td>1º</td><td>Yasmin Oliveira Carvalho</td><td>2297</td></tr>
+          <tr class="prata"><td>2º</td><td>Maria Luz Gonçalves Vicencio</td><td>2292</td></tr>
+          <tr class="bronze"><td>3º</td><td>Lara de Fátima Carvalho Faria</td><td>2274</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+     
     <!-- Resultados dos torneios -->
 <div class="card" id="resultados">
   <div class="results-header" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; margin-bottom:15px;">
