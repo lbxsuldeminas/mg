@@ -679,6 +679,7 @@ header img {
   
 <!-- Próximo Torneio -->
 <div class="card" id="proximo-torneio">
+  <!-- Conteúdo do torneio -->
   <div id="proximoTorneioConteudo">
     <div style="display:flex; flex-wrap: wrap; align-items:center; justify-content: space-between; gap:10px;">
       <h2 style="color: var(--primary-color); margin:0; font-size:1.67rem;">
@@ -724,22 +725,22 @@ header img {
     </div>
   </div>
 
-  <!-- Banner do torneio (inicialmente oculto) -->
-  <div id="bannerTorneio" style="display:none;">
-    <img src="CRV.jpg" alt="Banner do Torneio" style="width:100%; border-radius:10px; margin-top:10px;">
+  <!-- Banner do torneio -->
+  <div id="bannerTorneio" style="display:none; margin-top:15px; position:relative;">
+    <img src="CRV.jpg" alt="Banner do Torneio" style="width:100%; border-radius:10px;">
 
     <!-- Botão de compartilhamento -->
-    <a href="https://api.whatsapp.com/send?text=Ol%C3%A1!%20Veja%20este%20torneio%20incr%C3%ADvel!%20https://lbxsuldeminas.com.br" 
-       target="_blank" 
+    <a href="https://api.whatsapp.com/send?text=Ol%C3%A1!%20Veja%20este%20torneio%20incr%C3%ADvel!%20https://lbxsuldeminas.com.br"
+       target="_blank"
        style="position: absolute; top: 10px; right: 10px; background-color: #25D366; color: white; padding: 10px 12px; border-radius: 50%; font-size: 1.2rem; text-decoration: none;">
       <i class="fab fa-whatsapp"></i>
     </a>
   </div>
 
-  <!-- Seta central (fica sempre visível) -->
+  <!-- Seta -->
   <div style="display:flex; justify-content:center; margin-top:15px;">
-    <button id="toggleBannerBtn" class="toggle-seta" onclick="toggleBanner()">
-      <i class="fas fa-chevron-right"></i>
+    <button id="toggleBannerBtn" class="toggle-seta" onclick="toggleBanner()" style="background:none; border:none; cursor:pointer;">
+      <i class="fas fa-chevron-right" style="font-size:1.5rem; color:var(--primary-color); transition:transform 0.3s;"></i>
     </button>
   </div>
 </div>
@@ -1436,5 +1437,6 @@ function toggleClassificados() {
 
 </body>
 </html>
+
 
 
