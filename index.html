@@ -603,15 +603,17 @@ header img {
   margin-bottom: 20px; /* espaco entre etapas calendario (2etapas)*/
 }
 
- .rankingTabela tr.quarto,
+.rankingTabela tr.quarto,
 .rankingTabela tr.quinto {
-  background-color: #efefef;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
 }
 
 .rankingTabela tr.quarto:hover,
 .rankingTabela tr.quinto:hover {
-  background-color: #e0e0e0;
+  background-color: rgba(255, 255, 255, 0.93); /* um pouquinho mais forte no hover */
 }
+
 
      </style>
 </head>
@@ -1447,6 +1449,7 @@ function toggleClassificados() {
 
 </body>
 </html>
+
 
 
 
