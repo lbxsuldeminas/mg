@@ -1412,31 +1412,33 @@ menuToggle.addEventListener('click', () => {
     sub.style.display = (sub.style.display === 'none' || sub.style.display === '') ? 'flex' : 'none';
   }
 
-function toggleBanner() {
-  const banner = document.getElementById('bannerTorneio');
-  const conteudo = document.getElementById('proximoTorneioConteudo');
-  const seta = document.querySelector('#toggleBannerBtn i');
-
-  if (banner.style.display === 'none' || banner.style.display === '') {
-    banner.style.display = 'block';
-    conteudo.style.display = 'none';
-    seta.className = 'fas fa-chevron-down';
-  } else {
-    banner.style.display = 'none';
-    conteudo.style.display = 'block';
-    seta.className = 'fas fa-chevron-right';
-  }
-}
-
 function toggleClassificados() {
   const sub = document.getElementById('classificados-sub');
   sub.style.display = sub.style.display === 'none' ? 'flex' : 'none';
 }
+ 
+function toggleBanner() {
+  const conteudo = document.getElementById("proximoTorneioConteudo");
+  const banner = document.getElementById("bannerTorneio");
+  const seta = document.querySelector("#toggleBannerBtn i");
+
+  if (banner.style.display === "none" || banner.style.display === "") {
+    banner.style.display = "block";
+    conteudo.style.display = "none";
+    seta.style.transform = "rotate(90deg)";
+  } else {
+    banner.style.display = "none";
+    conteudo.style.display = "block";
+    seta.style.transform = "rotate(0deg)";
+  }
+}
+
   
 </script>
 
 </body>
 </html>
+
 
 
 
