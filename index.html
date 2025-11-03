@@ -1412,38 +1412,8 @@ function toggleClassificados() {
   sub.style.display = sub.style.display === "none" || sub.style.display === "" ? "flex" : "none";
 }
 
-// ⚠️ Importante: este script precisa estar DEPOIS do HTML acima
-document.addEventListener("DOMContentLoaded", function() {
-  const toggleButton = document.getElementById("toggleBanner");
-  const banner = document.getElementById("bannerTorneio");
-  const icon = toggleButton.querySelector("i");
-
-  toggleButton.addEventListener("click", function() {
-    if (banner.style.display === "none" || banner.style.display === "") {
-      banner.style.display = "block";
-      icon.classList.remove("fa-chevron-right");
-      icon.classList.add("fa-chevron-down");
-    } else {
-      banner.style.display = "none";
-      icon.classList.remove("fa-chevron-down");
-      icon.classList.add("fa-chevron-right");
-    }
-  });
-});
   
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
