@@ -602,6 +602,18 @@ header img {
     .calendar-item {
   margin-bottom: 20px; /* espaco entre etapas calendario (2etapas)*/
 }
+
+  .rankingTabela tr.quarto,
+  .rankingTabela tr.quinto {
+    background-color: #f2f2f2; /* cinza claro */
+  }
+
+  .rankingTabela tr.quarto:hover,
+  .rankingTabela tr.quinto:hover {
+    background-color: #e0e0e0; /* tom mais escuro ao passar o mouse */
+  }
+</style>
+
   
      </style>
 </head>
@@ -891,36 +903,46 @@ header img {
       </table>
     </div>     <!-- ▲ ▼ – same up down  -->
 
-    <!-- Ranking Feminino -->
-    <div class="rankingTabela" style="flex:1; min-width:250px;">
-      <h3 style="color: var(--primary-color); text-align:center;">👩 Feminino</h3>
-      <table style="width:100%; border-collapse: collapse; text-align:center;">
-        <thead>
-          <tr style="background: var(--primary-color); color:white;">
-            <th>Pos</th>
-            <th>Jogadora</th>
-            <th>Pontos</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="ouro">
-            <td>1º</td>
-            <td><a href="https://lbx.org.br/atleta/?ID=312574" target="_blank">Yasmin Oliveira Carvalho</a> <span class="evolucao same">–</span></td>
-            <td>2325</td>
-          </tr>
-          <tr class="prata">
-            <td>2º</td>
-            <td><a href="https://lbx.org.br/atleta/?ID=603138" target="_blank">Maria Luz Gonçalves Vicencio</a> <span class="evolucao same">–</span></td>
-            <td>2292</td>
-          </tr>
-          <tr class="bronze">
-            <td>3º</td>
-            <td><a href="https://lbx.org.br/atleta/?ID=601414" target="_blank">Lara de Fátima Carvalho Faria</a> <span class="evolucao same">–</span></td>
-            <td>2284</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<!-- Ranking Feminino -->
+<div class="rankingTabela" style="flex:1; min-width:250px;">
+  <h3 style="color: var(--primary-color); text-align:center;">👩 Feminino</h3>
+  <table style="width:100%; border-collapse: collapse; text-align:center;">
+    <thead>
+      <tr style="background: var(--primary-color); color:white;">
+        <th>Pos</th>
+        <th>Jogadora</th>
+        <th>Pontos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="ouro">
+        <td>1º</td>
+        <td><a href="https://lbx.org.br/atleta/?ID=312574" target="_blank">Yasmin Oliveira Carvalho</a> <span class="evolucao same">–</span></td>
+        <td>2325</td>
+      </tr>
+      <tr class="prata">
+        <td>2º</td>
+        <td><a href="https://lbx.org.br/atleta/?ID=603138" target="_blank">Maria Luz Gonçalves Vicencio</a> <span class="evolucao same">–</span></td>
+        <td>2292</td>
+      </tr>
+      <tr class="bronze">
+        <td>3º</td>
+        <td><a href="https://lbx.org.br/atleta/?ID=601414" target="_blank">Lara de Fátima Carvalho Faria</a> <span class="evolucao same">–</span></td>
+        <td>2284</td>
+      </tr>
+      <tr class="quarto">
+        <td>4º</td>
+        <td><a href="https://lbx.org.br/atleta/?ID=312834" target="_blank">Vitoria Aparecida Barros de Oliveira</a> <span class="evolucao same">–</span></td>
+        <td>2233</td>
+      </tr>
+      <tr class="quinto">
+        <td>5º</td>
+        <td><a href="https://lbx.org.br/atleta/?ID=602669" target="_blank">Cecilia Sanches Silva Gomes de Macedo</a> <span class="evolucao same">–</span></td>
+        <td>2229</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
   </div>
 </div>
@@ -1417,4 +1439,5 @@ function toggleClassificados() {
 
 </body>
 </html>
+
 
