@@ -704,7 +704,7 @@ header img {
     <div style="display:flex; flex-wrap: wrap; align-items:center; gap:12px;">
       <div style="display:flex; flex-wrap:wrap; gap:12px;">
         <button class="map-btn" onclick="window.open('https://maps.app.goo.gl/nAkzep5Z4mMH7Seo8')">Ver no Google Maps</button>
-        
+
         <div style="position: relative;">
           <button class="map-btn" onclick="toggleClassificados()">Classificados</button>
           <div id="classificados-sub" style="display:none; flex-direction: column; gap:8px; position:absolute; top:45px; left:0;">
@@ -712,7 +712,7 @@ header img {
             <button class="map-btn" onclick="window.open('https://s3.chess-results.com/tnr1131307.aspx?lan=10')">Feminino</button>
           </div>
         </div>
-        
+
         <button class="map-btn" onclick="window.open('https://s1.chess-results.com/tnr1264913.aspx?lan=10')">Inscritos</button>
         <button class="map-btn" onclick="window.open('https://github.com/lbxsuldeminas/mg/raw/main/premiacao$.pdf', '_blank')">Premiação</button>
         <button class="map-btn" onclick="window.open('https://github.com/lbxsuldeminas/testes/raw/main/programacaocerta.pdf', '_blank')">Programação</button>
@@ -722,30 +722,24 @@ header img {
     <div id="countdown" style="color: #3399ff; font-weight:bold; display:flex; align-items:center; margin-left: auto;">
       <i class="fas fa-clock" style="margin-right:5px;"></i>
     </div>
-
-    <!-- Botão de seta inicial -->
-    <div style="display:flex; justify-content:center; margin-top:20px;">
-      <button id="toggleBanner" class="toggle-seta" onclick="toggleBanner()">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-    </div>
   </div>
 
-  <!-- Banner do torneio -->
-  <div id="bannerTorneio" style="display:none; position:relative;">
-    <img src="CRV.jpg" alt="Banner do Torneio" style="width:100%; border-radius:10px;">
-    
+  <!-- Banner do torneio (inicialmente oculto) -->
+  <div id="bannerTorneio" style="display:none;">
+    <img src="CRV.jpg" alt="Banner do Torneio" style="width:100%; border-radius:10px; margin-top:10px;">
+
     <!-- Botão de compartilhamento -->
     <a href="https://api.whatsapp.com/send?text=Ol%C3%A1!%20Veja%20este%20torneio%20incr%C3%ADvel!%20https://lbxsuldeminas.com.br" 
        target="_blank" 
        style="position: absolute; top: 10px; right: 10px; background-color: #25D366; color: white; padding: 10px 12px; border-radius: 50%; font-size: 1.2rem; text-decoration: none;">
       <i class="fab fa-whatsapp"></i>
     </a>
+  </div>
 
-    <!-- Seta que aparece sobre o banner -->
-    <button id="toggleBannerTop" class="toggle-seta" onclick="toggleBanner()" 
-            style="position:absolute; bottom:10px; left:50%; transform:translateX(-50%); background:rgba(255,255,255,0.9);">
-      <i class="fas fa-chevron-left"></i>
+  <!-- Seta central (fica sempre visível) -->
+  <div style="display:flex; justify-content:center; margin-top:15px;">
+    <button id="toggleBannerBtn" class="toggle-seta" onclick="toggleBanner()">
+      <i class="fas fa-chevron-right"></i>
     </button>
   </div>
 </div>
@@ -1421,14 +1415,4 @@ menuToggle.addEventListener('click', () => {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
 
