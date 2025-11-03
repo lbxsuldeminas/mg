@@ -679,7 +679,6 @@ header img {
   
 <!-- Próximo Torneio -->
 <div class="card" id="proximo-torneio">
-  <!-- Conteúdo do torneio -->
   <div id="proximoTorneioConteudo">
     <div style="display:flex; flex-wrap: wrap; align-items:center; justify-content: space-between; gap:10px;">
       <h2 style="color: var(--primary-color); margin:0; font-size:1.67rem;">
@@ -705,15 +704,17 @@ header img {
     <div style="display:flex; flex-wrap: wrap; align-items:center; gap:12px;">
       <div style="display:flex; flex-wrap:wrap; gap:12px;">
         <button class="map-btn" onclick="window.open('https://maps.app.goo.gl/nAkzep5Z4mMH7Seo8')">Ver no Google Maps</button>
-
+        
+        <!-- Botão principal -->
         <div style="position: relative;">
           <button class="map-btn" onclick="toggleClassificados()">Classificados</button>
+          <!-- Botões ocultos -->
           <div id="classificados-sub" style="display:none; flex-direction: column; gap:8px; position:absolute; top:45px; left:0;">
             <button class="map-btn" onclick="window.open('https://s3.chess-results.com/tnr1239336.aspx?lan=10')">Masculino</button>
             <button class="map-btn" onclick="window.open('https://s3.chess-results.com/tnr1131307.aspx?lan=10')">Feminino</button>
           </div>
         </div>
-
+        
         <button class="map-btn" onclick="window.open('https://s1.chess-results.com/tnr1264913.aspx?lan=10')">Inscritos</button>
         <button class="map-btn" onclick="window.open('https://github.com/lbxsuldeminas/mg/raw/main/premiacao$.pdf', '_blank')">Premiação</button>
         <button class="map-btn" onclick="window.open('https://github.com/lbxsuldeminas/testes/raw/main/programacaocerta.pdf', '_blank')">Programação</button>
@@ -723,25 +724,26 @@ header img {
     <div id="countdown" style="color: #3399ff; font-weight:bold; display:flex; align-items:center; margin-left: auto;">
       <i class="fas fa-clock" style="margin-right:5px;"></i>
     </div>
-  </div>
 
-  <!-- Banner do torneio -->
-  <div id="bannerTorneio" style="display:none; margin-top:15px; position:relative;">
+    <!-- AQUI A SETA FICA DENTRO DO CARD, CENTRALIZADA -->
+    <div style="display:flex; justify-content:center; margin-top:20px;">
+      <button id="toggleBanner" class="toggle-seta">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+
+  </div> <!-- fecha proximoTorneioConteudo -->
+
+  <!-- Banner do torneio (inicialmente oculto) -->
+  <div id="bannerTorneio" style="display:none;">
     <img src="CRV.jpg" alt="Banner do Torneio" style="width:100%; border-radius:10px;">
-
-    <!-- Botão de compartilhamento -->
-    <a href="https://api.whatsapp.com/send?text=Ol%C3%A1!%20Veja%20este%20torneio%20incr%C3%ADvel!%20https://lbxsuldeminas.com.br"
-       target="_blank"
+    
+    <!-- Botão de compartilhamento sobre o banner -->
+    <a href="https://api.whatsapp.com/send?text=Ol%C3%A1!%20Veja%20este%20torneio%20incr%C3%ADvel!%20https://lbxsuldeminas.com.br" 
+       target="_blank" 
        style="position: absolute; top: 10px; right: 10px; background-color: #25D366; color: white; padding: 10px 12px; border-radius: 50%; font-size: 1.2rem; text-decoration: none;">
       <i class="fab fa-whatsapp"></i>
     </a>
-  </div>
-
-  <!-- Seta -->
-  <div style="display:flex; justify-content:center; margin-top:15px;">
-    <button id="toggleBannerBtn" class="toggle-seta" onclick="toggleBanner()" style="background:none; border:none; cursor:pointer;">
-      <i class="fas fa-chevron-right" style="font-size:1.5rem; color:var(--primary-color); transition:transform 0.3s;"></i>
-    </button>
   </div>
 </div>
 
@@ -1438,6 +1440,7 @@ function toggleBanner() {
 
 </body>
 </html>
+
 
 
 
