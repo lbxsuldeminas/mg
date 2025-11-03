@@ -602,8 +602,8 @@ header img {
     .calendar-item {
   margin-bottom: 20px; /* espaco entre etapas calendario (2etapas)*/
 }
-
-    function toggleBanner() {
+    <script>
+function toggleBanner() {
   const banner = document.getElementById('bannerTorneio');
   const seta = document.querySelector('#toggleBanner i');
 
@@ -618,10 +618,9 @@ header img {
   }
 }
 
-// Corrige o clique da seta
 document.getElementById('toggleBanner').addEventListener('click', toggleBanner);
-
-    
+</script>
+  
      </style>
 </head>
 <body>
@@ -1452,6 +1451,7 @@ document.getElementById("toggleBanner").addEventListener("click", function() {
 
 </body>
 </html>
+
 
 
 
