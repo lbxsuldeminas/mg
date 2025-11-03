@@ -682,13 +682,14 @@ header img {
   <div id="proximoTorneioConteudo">
     <div style="display:flex; flex-wrap: wrap; align-items:center; justify-content: space-between; gap:10px;">
       <h2 style="color: var(--primary-color); margin:0; font-size:1.67rem;">
-       <i class="fa-solid fa-chess-king" style="font-size:1.5rem;"></i>
+        <i class="fa-solid fa-chess-king" style="font-size:1.5rem;"></i>
         Final: Conceição do Rio Verde - MG
       </h2>
       <div style="display:flex; align-items:center; gap:10px;">
         <p style="color:red; font-weight:bold; margin:0;">INSCRIÇÕES ABERTAS!</p>
         <button class="inscreva-btn" onclick="window.open('https://wa.me/5535997648241?text=Oi,%20tudo%20bem?%20Queria%20saber%20as%20informações%20para%20me%20inscrever%20no%20torneio.')">
-       Inscreva-se </button>
+          Inscreva-se
+        </button>
       </div>
     </div>
 
@@ -700,50 +701,52 @@ header img {
       Prepare-se para mais um grande evento de xadrez no Sul de Minas!
     </p>
 
-<div style="display:flex; flex-wrap: wrap; align-items:center; gap:12px;">
-  <div style="display:flex; flex-wrap:wrap; gap:12px;">
-    <button class="map-btn" onclick="window.open('https://maps.app.goo.gl/nAkzep5Z4mMH7Seo8')">Ver no Google Maps</button>
-    <button class="map-btn" onclick="window.open('https://s1.chess-results.com/tnr1264913.aspx?lan=10')">Inscritos</button> 
+    <div style="display:flex; flex-wrap: wrap; align-items:center; gap:12px;">
+      <div style="display:flex; flex-wrap:wrap; gap:12px;">
+        <button class="map-btn" onclick="window.open('https://maps.app.goo.gl/nAkzep5Z4mMH7Seo8')">Ver no Google Maps</button>
+        <button class="map-btn" onclick="window.open('https://s1.chess-results.com/tnr1264913.aspx?lan=10')">Inscritos</button>
 
-    <!-- Botão principal -->
-    <div style="position: relative;">
-      <button class="map-btn" onclick="toggleClassificados()">Classificados</button>
-      <!-- Botões ocultos -->
-      <div id="classificados-sub" style="display:none; flex-direction: column; gap:8px; position:absolute; top:45px; left:0;">
-        <button class="map-btn" onclick="window.open('https://s3.chess-results.com/tnr1239336.aspx?lan=10')">Masculino</button>
-        <button class="map-btn" onclick="window.open('https://s3.chess-results.com/tnr1131307.aspx?lan=10')">Feminino</button>
+        <!-- Botão principal -->
+        <div style="position: relative;">
+          <button class="map-btn" onclick="toggleClassificados()">Classificados</button>
+          <!-- Botões ocultos -->
+          <div id="classificados-sub" style="display:none; flex-direction: column; gap:8px; position:absolute; top:45px; left:0;">
+            <button class="map-btn" onclick="window.open('https://s3.chess-results.com/tnr1239336.aspx?lan=10')">Masculino</button>
+            <button class="map-btn" onclick="window.open('https://s3.chess-results.com/tnr1131307.aspx?lan=10')">Feminino</button>
+          </div>
+        </div>
+
+        <button class="map-btn" onclick="window.open('https://github.com/lbxsuldeminas/mg/raw/main/premiacao$.pdf', '_blank')">Premiação</button>
+        <button class="map-btn" onclick="window.open('https://github.com/lbxsuldeminas/testes/raw/main/programacaocerta.pdf', '_blank')">Programação</button>
       </div>
     </div>
 
-    <button class="map-btn" onclick="window.open('https://github.com/lbxsuldeminas/mg/raw/main/premiacao$.pdf', '_blank')">Premiação</button>
-    <button class="map-btn" onclick="window.open('https://github.com/lbxsuldeminas/testes/raw/main/programacaocerta.pdf', '_blank')">Programação</button>
-  </div>
-</div>
-
-      <div id="countdown" style="color: #3399ff; font-weight:bold; display:flex; align-items:center; margin-left: auto;">
-        <i class="fas fa-clock" style="margin-right:5px;"></i>
-      </div>
+    <div id="countdown" style="color: #3399ff; font-weight:bold; display:flex; align-items:center; margin-left: auto;">
+      <i class="fas fa-clock" style="margin-right:5px;"></i>
     </div>
-  </div>
 
-  <!-- Botão de toggle (seta direita) -->
-  <button id="toggleBanner" class="toggle-seta">
-    <i class="fas fa-chevron-right"></i>
-  </button>
+    <!-- AQUI A SETA FICA DENTRO DO CARD, CENTRALIZADA -->
+    <div style="display:flex; justify-content:center; margin-top:20px;">
+      <button id="toggleBanner" class="toggle-seta">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+
+  </div> <!-- fecha proximoTorneioConteudo -->
 
   <!-- Banner do torneio (inicialmente oculto) -->
-  <div id="bannerTorneio">
+  <div id="bannerTorneio" style="display:none;">
     <img src="tc.jpg" alt="Banner do Torneio" style="width:100%; border-radius:10px;">
-<!-- Botão de compartilhamento sobre o banner -->
-  <a href="https://api.whatsapp.com/send?text=Ol%C3%A1!%20Veja%20este%20torneio%20incr%C3%ADvel!%20https://lbxsuldeminas.com.br" 
-     target="_blank" 
-     style="position: absolute; top: 10px; right: 10px; background-color: #25D366; color: white; padding: 10px 12px; border-radius: 50%; font-size: 1.2rem; text-decoration: none;">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-<!--  <img src="PA.jpg" alt="Banner do Torneio" style="width:100%; border-radius:10px;"> -->
+    
+    <!-- Botão de compartilhamento sobre o banner -->
+    <a href="https://api.whatsapp.com/send?text=Ol%C3%A1!%20Veja%20este%20torneio%20incr%C3%ADvel!%20https://lbxsuldeminas.com.br" 
+       target="_blank" 
+       style="position: absolute; top: 10px; right: 10px; background-color: #25D366; color: white; padding: 10px 12px; border-radius: 50%; font-size: 1.2rem; text-decoration: none;">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
 </div>
-</div>
-</div>
+
 
     <!-- Calendário de Próximos Torneios -->
     <div class="card" id="calendario">
@@ -1399,6 +1402,7 @@ menuToggle.addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 
