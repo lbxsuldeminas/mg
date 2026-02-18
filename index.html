@@ -773,7 +773,6 @@ header img {
   </div>
 </div>
 
-
 <!-- Galeria de Fotos -->
 <div class="card" id="galeria">
   <div class="gallery-header" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; margin-bottom:15px;">
@@ -783,13 +782,32 @@ header img {
     <div style="display:flex; align-items:center; gap:10px;">
       <label for="yearFilter" style="margin:0; font-weight:600;">Selecione o ano:</label>
       <select id="yearFilter" style="padding:5px 10px; border-radius:6px; border:1px solid #ccc;">
+        <option value="2026" selected>2026</option>
         <option value="2025">2025</option>
         <option value="2024">2024</option>
       </select>
     </div>
   </div>
 
-  <!-- Apenas uma lista -->
+  <div class="results-list">
+
+    <!-- Galeria 2026 -->
+    <div class="result-item" data-year="2026">
+      <i class="fas fa-image"></i>
+      <div>
+        <strong>Recanto da Mata - 2026</strong><br />
+        <a href="COLE_AQUI_O_LINK_DAS_FOTOS_2026" target="_blank">Ver fotos</a>
+      </div>
+    </div>
+
+<!--    <div class="result-item" data-year="2026">
+      <i class="fas fa-image"></i>
+      <div>
+        <strong>Pouso Alegre - 2026</strong><br />
+        <a href="COLE_AQUI_O_LINK_DAS_FOTOS_2026" target="_blank">Ver fotos</a>
+      </div>
+    </div> -->
+  
   <div class="results-list">
     <div class="result-item" data-year="2025">
       <i class="fas fa-image"></i>
@@ -1477,6 +1495,7 @@ function toggleClassificados() {
 
 </body>
 </html>
+
 
 
 
