@@ -1561,15 +1561,26 @@ function configurarToggle(toggleId, bannerId, conteudoId) {
   if (!toggleBtn || !banner || !conteudo) return;
 
   toggleBtn.addEventListener("click", function () {
-    const icon = this.querySelector("i");
-    const aberto = window.getComputedStyle(banner).display !== "none";
+  const icon = this.querySelector("i");
+  const aberto = banner.classList.contains("show");
 
-    banner.style.display = aberto ? "none" : "block";
-    conteudo.style.display = aberto ? "block" : "none";
+  if (aberto) {
+    banner.classList.remove("show");
+    setTimeout(() => {
+      banner.style.display = "none";
+    }, 300);
+    conteudo.style.display = "block";
+  } else {
+    banner.style.display = "block";
+    setTimeout(() => {
+      banner.classList.add("show");
+    }, 10);
+    conteudo.style.display = "none";
+  }
 
-    icon.classList.toggle("fa-chevron-right", aberto);
-    icon.classList.toggle("fa-chevron-down", !aberto);
-  });
+  icon.classList.toggle("fa-chevron-right", aberto);
+  icon.classList.toggle("fa-chevron-down", !aberto);
+});
 }
 
 configurarToggle("toggleBanner", "bannerTorneio", "proximoTorneioConteudo");
@@ -1678,6 +1689,7 @@ function toggleClassificados() {
   sub.style.display = (sub.style.display === "none" || sub.style.display === "") ? "flex" : "none";
 }
 </script>
+
 
 
 
