@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LBX - Inscrição Torneios</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  background:
+  linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
+  url('https://images.unsplash.com/photo-1586165368502-1bad197a6461?q=80&w=1200');
+  background-size:cover;
+  background-position:center;
+  color:white;
+}
+
+.card{
+  width:100%;
+  max-width:460px;
+  background:rgba(15,15,15,0.92);
+  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(8px);
+  padding:35px;
+  border-radius:22px;
+  box-shadow:0 0 30px rgba(0,0,0,0.7);
+  position:relative;
+}
+
+/* inputs */
+label{
+  display:block;
+  margin-bottom:7px;
+  font-size:14px;
+  color:#d1d5db;
+}
+
+input, select{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:#1a1a1a;
+  color:white;
+  margin-bottom:18px;
+  border:1px solid #2d2d2d;
+}
+
+input:focus, select:focus{
+  border:1px solid #d4af37;
+}
+
+/* valor */
+.valor{
+  background:linear-gradient(135deg,#d4af37,#8b6b1f);
+  color:black;
+  padding:16px;
+  border-radius:14px;
+  text-align:center;
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+/* botão */
+button{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(135deg,#d4af37,#8b6b1f);
+  color:black;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+textarea{
+  width:100%;
+  height:90px;
+  border:none;
+  border-radius:12px;
+  padding:12px;
+  background:#1a1a1a;
+  color:white;
+}
+
+/* ===== TÍTULO CORRIGIDO ===== */
+.titulo{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.titulo-texto{
+  text-align:center;
+  line-height:1.2;
+}
+
+.titulo-principal{
+  font-size:30px;
+  font-weight:700;
+  color:#d4af37;
+}
+
+.titulo-sub{
+  font-size:20px;
+  font-weight:600;
+  color:#d4af37;
+  opacity:0.85;
+}
+
+/* ===== ÍCONE NO CANTO DIREITO (CORREÇÃO PRINCIPAL) ===== */
+.info-icon{
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:#d4af37;
+  color:black;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* ===== POPUP ===== */
+.info-box{
+  display:none;
+
+  position:absolute;
+  top:70px;
+  left:50%;
+  transform:translateX(-50%);
+
+  width:220px;
+  max-width:80vw;
+
+  background:rgba(20,20,20,0.95);
+  border:1px solid rgba(255,255,255,0.1);
+
+  padding:12px;
+  border-radius:12px;
+
+  font-size:12px;
+  text-align:center;
+  color:#d1d5db;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.6);
+  z-index:999;
+}
+</style>
+  
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="titulo">
+
+  <div class="titulo-texto">
+    <div class="titulo-principal">LBX</div>
+    <div class="titulo-sub">Inscrição de Torneios</div>
+  </div>
+
+  <span class="info-icon" onclick="toggleInfo()">i</span>
+
+</div>
+
+ <div id="infoBox" class="info-box">
+  Valor:<br>
+  R$ 30 Escolar -
+  R$ 40 Adulto <br>
+   
+  Após o pagamento, a inscrição é feita de forma automática!<br>
+  
+</div>
+
+  <form id="formulario">
+
+    <label>Nome completo</label>
+    <input type="text" required>
+
+    <label>Data de nascimento</label>
+    <input type="date" id="nascimento" required>
+
+    <label>Tem cadastro na LBX?</label>
+    <select required>
+      <option value="">Selecione</option>
+      <option value="sim">Sim</option>
+      <option value="nao">Não</option>
+    </select>
+
+    <div class="valor" id="valor" style="display:none;"></div>
+
+    <button type="submit">Ir para pagamento</button>
+
+  </form>
+
+  <div id="pixArea" style="display:none; margin-top:25px; text-align:center;">
+
+    <h2 style="color:#d4af37; margin-bottom:15px;">Pagamento Pix</h2>
+
+    <img src="https://i.ibb.co/qFFC91Mv/IMG-0399.jpg"
+      style="width:230px; background:white; padding:10px; border-radius:15px;">
+
+    <div style="
+      margin-top:15px;
+      background:#1a1a1a;
+      padding:14px;
+      border-radius:12px;
+      border:1px solid #2d2d2d;
+      font-size:14px;
+      line-height:1.6;
+      color:#d1d5db;
+    ">
+
+      <b style="color:#d4af37;">Titular:</b><br>
+      Nelson Roberto Junqueira Meirelles<br><br>
+
+      <b style="color:#d4af37;">Banco:</b><br>
+      Mercado Pago
+
+    </div>
+
+    <textarea id="pixKey" readonly>35999291224</textarea>
+
+    <button onclick="copiarPix()">Copiar chave Pix</button>
+
+  </div>
+
+</div>
+
+<script>
+
+const form = document.getElementById("formulario");
+const nascimento = document.getElementById("nascimento");
+const valor = document.getElementById("valor");
+const pixArea = document.getElementById("pixArea");
+
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbzDcjdF5D3_wJAM6z2FuIxTXJXDS0cILM7ITWzwiLEaSgquMu5LzyOjU0-TBYP0jTOD/exec";
+
+function calcularIdade(data){
+  const hoje = new Date();
+  const nasc = new Date(data);
+
+  let idade = hoje.getFullYear() - nasc.getFullYear();
+
+  const mes = hoje.getMonth() - nasc.getMonth();
+
+  if(mes < 0 || (mes === 0 && hoje.getDate() < nasc.getDate())){
+    idade--;
+  }
+
+  return idade;
+}
+
+form.addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const nome = form.querySelector('input[type="text"]').value;
+  const dataNascimento = nascimento.value;
+  const cadastro = form.querySelector("select").value;
+
+  const idade = calcularIdade(dataNascimento);
+
+  let preco = 30;
+  if(idade >= 18){
+    preco = 40;
+  }
+
+  valor.style.display = "block";
+  valor.innerHTML = `Valor da inscrição: R$ ${preco}`;
+
+  pixArea.style.display = "block";
+
+  try{
+    await fetch(SCRIPT_URL, {
+      method: "POST",
+      body: JSON.stringify({
+        nome: nome,
+        nascimento: dataNascimento,
+        cadastro: cadastro,
+        valor: preco
+      })
+    });
+
+    console.log("Enviado!");
+  }catch(err){
+    alert("Erro ao enviar inscrição");
+    console.log(err);
+  }
+
+});
+
+function copiarPix(){
+  const pix = document.getElementById("pixKey");
+  pix.select();
+  navigator.clipboard.writeText(pix.value);
+  alert("Chave Pix copiada!");
+}
+function toggleInfo(){
+  const box = document.getElementById("infoBox");
+
+  if(box.style.display === "block"){
+    box.style.display = "none";
+  }else{
+    box.style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
