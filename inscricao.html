@@ -325,7 +325,7 @@ if((anoAtual - anoNascimento) >= 18){
   pixArea.style.display = "block";
 
   try{
-    await fetch(SCRIPT_URL, {
+const resposta = await fetch(SCRIPT_URL, {
   method: "POST",
   body: JSON.stringify({
     nome: nome,
@@ -336,7 +336,11 @@ if((anoAtual - anoNascimento) >= 18){
   })
 });
 
-    console.log("Enviado!");
+const texto = await resposta.text();
+
+alert(texto);
+
+console.log(texto);
   }catch(err){
     alert("Erro: " + err);
     console.log(err);
