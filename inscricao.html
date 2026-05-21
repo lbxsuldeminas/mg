@@ -215,7 +215,7 @@ textarea{
       <option value="nao">Não</option>
     </select>
 
-    <label>Cidade do torneio</label>
+    <label>Cidade do torneio:</label>
 
 <select id="cidade" required>
   <option value="">Selecione a cidade:</option>
@@ -298,7 +298,7 @@ form.addEventListener("submit", async function(e){
 
   const nome = form.querySelector('input[type="text"]').value;
   const dataNascimento = nascimento.value;
-  const cadastro = form.querySelector("select").value;
+  const cadastro = form.querySelectorAll("select")[0].value;
   const cidade = document.getElementById("cidade").value;
 
  const anoNascimento = new Date(dataNascimento).getFullYear();
