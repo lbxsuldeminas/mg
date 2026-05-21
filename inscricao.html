@@ -339,14 +339,6 @@ form.addEventListener("submit", async function(e){
       })
     });
 
-    alert("STATUS: " + resposta.status);
-
-    const texto = await resposta.text();
-
-    alert("RESPOSTA: " + texto);
-
-    console.log(texto);
-
   }catch(err){
 
     alert("ERRO FETCH: " + err);
