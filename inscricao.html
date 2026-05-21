@@ -215,6 +215,18 @@ textarea{
       <option value="nao">Não</option>
     </select>
 
+    <label>Cidade do torneio</label>
+
+<select id="cidade" required>
+  <option value="">Selecione a cidade</option>
+
+  <option value="Paraguaçu">Paraguaçu</option>
+  <option value="Liberdade">Liberdade</option>
+  <option value="Machado">Machado</option>
+  <option value="Três Corações">Três Corações</option>
+
+</select>
+
     <div class="valor" id="valor" style="display:none;"></div>
 
     <button type="submit">Ir para pagamento</button>
@@ -288,6 +300,7 @@ form.addEventListener("submit", async function(e){
   const nome = form.querySelector('input[type="text"]').value;
   const dataNascimento = nascimento.value;
   const cadastro = form.querySelector("select").value;
+  const cidade = document.getElementById("cidade").value;
 
  const anoNascimento = new Date(dataNascimento).getFullYear();
 const anoAtual = new Date().getFullYear();
@@ -319,6 +332,7 @@ if((anoAtual - anoNascimento) >= 18){
         nome: nome,
         nascimento: dataNascimento,
         cadastro: cadastro,
+        cidade: cidade,
         valor: preco
       })
     });
