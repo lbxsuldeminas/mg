@@ -342,8 +342,9 @@ if((anoAtual - anoNascimento) >= 18){
 
     console.log("Enviado!");
   }catch(err){
-    alert("Erro ao enviar inscrição");
+    alert("Erro: " + err);
     console.log(err);
+    console.error(err);
   }
 
 });
