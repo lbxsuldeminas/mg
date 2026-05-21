@@ -287,12 +287,14 @@ form.addEventListener("submit", async function(e){
   const dataNascimento = nascimento.value;
   const cadastro = form.querySelector("select").value;
 
-  const idade = calcularIdade(dataNascimento);
+ const anoNascimento = new Date(dataNascimento).getFullYear();
+const anoAtual = new Date().getFullYear();
 
-  let preco = 30;
-  if(idade >= 18){
-    preco = 40;
-  }
+let preco = 30;
+
+if((anoAtual - anoNascimento) >= 18){
+  preco = 40;
+}
 
   valor.style.display = "block";
   valor.innerHTML = `Valor da inscrição: R$ ${preco}`;
