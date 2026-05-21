@@ -327,15 +327,18 @@ if((anoAtual - anoNascimento) >= 18){
 
   try{
     await fetch(SCRIPT_URL, {
-      method: "POST",
-      body: JSON.stringify({
-        nome: nome,
-        nascimento: dataNascimento,
-        cadastro: cadastro,
-        cidade: cidade,
-        valor: preco
-      })
-    });
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    nome: nome,
+    nascimento: dataNascimento,
+    cadastro: cadastro,
+    cidade: cidade,
+    valor: preco
+  })
+});
 
     console.log("Enviado!");
   }catch(err){
