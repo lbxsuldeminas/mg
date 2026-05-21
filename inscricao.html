@@ -225,8 +225,9 @@ textarea{
 
     <h2 style="color:#d4af37; margin-bottom:15px;">Pagamento Pix</h2>
 
-    <img src="https://i.ibb.co/qFFC91Mv/IMG-0399.jpg"
-      style="width:230px; background:white; padding:10px; border-radius:15px;">
+   <img id="qrCodePix"
+  src=""
+  style="width:230px; background:white; padding:10px; border-radius:15px;">
 
     <div style="
       margin-top:15px;
@@ -247,7 +248,7 @@ textarea{
 
     </div>
 
-    <textarea id="pixKey" readonly>35999291224</textarea>
+    <textarea id="pixKey" readonly>35997648241</textarea>
 
     <button onclick="copiarPix()">Copiar chave Pix</button>
 
@@ -261,6 +262,7 @@ const form = document.getElementById("formulario");
 const nascimento = document.getElementById("nascimento");
 const valor = document.getElementById("valor");
 const pixArea = document.getElementById("pixArea");
+const qrCode = document.getElementById("qrCodePix");
 
 const SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbzDcjdF5D3_wJAM6z2FuIxTXJXDS0cILM7ITWzwiLEaSgquMu5LzyOjU0-TBYP0jTOD/exec";
@@ -298,6 +300,15 @@ if((anoAtual - anoNascimento) >= 18){
 
   valor.style.display = "block";
   valor.innerHTML = `Valor da inscrição: R$ ${preco}`;
+  if(preco === 30){
+
+  qrCode.src = "https://i.ibb.co/RpcqNTsm/IMG-0677.jpg";
+
+}else{
+
+  qrCode.src = "https://i.ibb.co/BHfDHrtL/IMG-0676.jpg";
+
+}
 
   pixArea.style.display = "block";
 
