@@ -277,7 +277,7 @@ const qrCode = document.getElementById("qrCodePix");
 
 const SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbxoNQvoQ41R45H-Y3oU7U7FTOKQO4nS0Mzkwp051OE1KaIyrzClMyBOahpl8cWa4X21/exec";
-  
+
 function calcularIdade(data){
   const hoje = new Date();
   const nasc = new Date(data);
@@ -294,6 +294,7 @@ function calcularIdade(data){
 }
 
 form.addEventListener("submit", async function(e){
+
   e.preventDefault();
 
   const nome = form.querySelector('input[type="text"]').value;
@@ -301,69 +302,88 @@ form.addEventListener("submit", async function(e){
   const cadastro = form.querySelectorAll("select")[0].value;
   const cidade = document.getElementById("cidade").value;
 
- const anoNascimento = new Date(dataNascimento).getFullYear();
-const anoAtual = new Date().getFullYear();
+  const anoNascimento = new Date(dataNascimento).getFullYear();
+  const anoAtual = new Date().getFullYear();
 
-let preco = 30;
+  let preco = 30;
 
-if((anoAtual - anoNascimento) >= 18){
-  preco = 40;
-}
+  if((anoAtual - anoNascimento) >= 18){
+    preco = 40;
+  }
 
   valor.style.display = "block";
   valor.innerHTML = `Valor da inscrição: R$ ${preco}`;
+
   if(preco === 30){
 
-  qrCode.src = "https://i.ibb.co/RpcqNTsm/IMG-0677.jpg";
+    qrCode.src = "https://i.ibb.co/RpcqNTsm/IMG-0677.jpg";
 
-}else{
+  }else{
 
-  qrCode.src = "https://i.ibb.co/BHfDHrtL/IMG-0676.jpg";
+    qrCode.src = "https://i.ibb.co/BHfDHrtL/IMG-0676.jpg";
 
-}
+  }
 
   pixArea.style.display = "block";
 
   try{
-const resposta = await fetch(SCRIPT_URL, {
-  method: "POST",
-  body: JSON.stringify({
-    nome: nome,
-    nascimento: dataNascimento,
-    cadastro: cadastro,
-    cidade: cidade,
-    valor: preco
-  })
-});
 
-const texto = await resposta.text();
+    const resposta = await fetch(SCRIPT_URL, {
+      method: "POST",
+      body: JSON.stringify({
+        nome: nome,
+        nascimento: dataNascimento,
+        cadastro: cadastro,
+        cidade: cidade,
+        valor: preco
+      })
+    });
 
-alert(texto);
+    alert("STATUS: " + resposta.status);
 
-console.log(texto);
+    const texto = await resposta.text();
+
+    alert("RESPOSTA: " + texto);
+
+    console.log(texto);
+
   }catch(err){
-    alert("Erro: " + err);
+
+    alert("ERRO FETCH: " + err);
+
     console.log(err);
     console.error(err);
+
   }
 
 });
 
 function copiarPix(){
+
   const pix = document.getElementById("pixKey");
+
   pix.select();
+
   navigator.clipboard.writeText(pix.value);
+
   alert("Chave Pix copiada!");
 }
+
 function toggleInfo(){
+
   const box = document.getElementById("infoBox");
 
   if(box.style.display === "block"){
+
     box.style.display = "none";
+
   }else{
+
     box.style.display = "block";
+
   }
 }
+
 </script>
 
 </body>
