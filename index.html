@@ -650,6 +650,56 @@ header img {
   color: #fff;
 }
 
+    
+/* ===== PERSONALIZAÇÃO PRÓXIMO TORNEIO ===== */
+
+#proximo-torneio {
+    background: linear-gradient(135deg, #fffdf5, #f3e5bd);
+    border: 1px solid #d6b45c;
+    box-shadow: 0 5px 18px rgba(180, 140, 50, 0.18);
+    color: #393329;
+}
+
+/* Título */
+#proximo-torneio h2,
+#proximo-torneio h3 {
+    color: #29251d;
+}
+
+/* Botões de informações */
+#proximo-torneio .map-btn,
+#proximo-torneio .inscritos-btn {
+    background: linear-gradient(135deg, #d8b45b, #bd9135);
+    color: #fff;
+    box-shadow: 0 3px 7px rgba(130, 95, 25, 0.18);
+}
+
+#proximo-torneio .map-btn:hover,
+#proximo-torneio .inscritos-btn:hover {
+    background: linear-gradient(135deg, #bd9135, #a77a24);
+}
+
+/* Contagem regressiva */
+#proximo-torneio #countdown {
+    color: #a77a24;
+}
+
+/* Ícone da seta */
+#proximo-torneio .toggle-seta {
+    color: #bd9135;
+}
+
+/* Botões de inscrição permanecem vermelhos */
+#proximo-torneio .inscreva-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#proximo-torneio .inscreva-btn:hover {
+    background-color: #c0392b;
+}
+
+
      </style>
 </head>
 <body>
@@ -775,7 +825,7 @@ header img {
 
     <div style="display:flex; flex-wrap:wrap; gap:12px;">
       <button class="map-btn" onclick="window.open('https://maps.app.goo.gl/FHUYEotga2wZDnPy5')">Ver no Google Maps</button>
-    <!--  <button class="map-btn" onclick="window.open('https://s2.chess-results.com/tnr1513618.aspx?lan=10')">Inscritos</button> -->
+    <button class="map-btn" onclick="window.open('https://s1.chess-results.com/tnr1539381.aspx?lan=10')">Inscritos</button>
       <button class="map-btn" onclick="window.open('p1.html')">Premiação</button>
       <button class="map-btn" onclick="window.open('p2.html')">Programação</button>
     </div>
