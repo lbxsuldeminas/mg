@@ -1,378 +1,218 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LBX - Inscrição Torneios</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Inter', sans-serif;
-}
-
-body{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-  background:
-  linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
-  url('https://images.unsplash.com/photo-1586165368502-1bad197a6461?q=80&w=1200');
-  background-size:cover;
-  background-position:center;
-  color:white;
-}
-
-.card{
-  width:100%;
-  max-width:460px;
-  background:rgba(15,15,15,0.92);
-  border:1px solid rgba(255,255,255,0.08);
-  backdrop-filter:blur(8px);
-  padding:35px;
-  border-radius:22px;
-  box-shadow:0 0 30px rgba(0,0,0,0.7);
-  position:relative;
-}
-
-/* inputs */
-label{
-  display:block;
-  margin-bottom:7px;
-  font-size:14px;
-  color:#d1d5db;
-}
-
-input, select{
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:12px;
-  background:#1a1a1a;
-  color:white;
-  margin-bottom:18px;
-  border:1px solid #2d2d2d;
-}
-
-input:focus, select:focus{
-  border:1px solid #d4af37;
-}
-
-/* valor */
-.valor{
-  background:linear-gradient(135deg,#d4af37,#8b6b1f);
-  color:black;
-  padding:16px;
-  border-radius:14px;
-  text-align:center;
-  font-size:20px;
-  font-weight:700;
-  margin-bottom:20px;
-}
-
-/* botão */
-button{
-  width:100%;
-  padding:15px;
-  border:none;
-  border-radius:14px;
-  background:linear-gradient(135deg,#d4af37,#8b6b1f);
-  color:black;
-  font-size:16px;
-  font-weight:700;
-  cursor:pointer;
-}
-
-textarea{
-  width:100%;
-  height:90px;
-  border:none;
-  border-radius:12px;
-  padding:12px;
-  background:#1a1a1a;
-  color:white;
-}
-
-/* ===== TÍTULO CORRIGIDO ===== */
-.titulo{
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-bottom:20px;
-}
-
-.titulo-texto{
-  text-align:center;
-  line-height:1.2;
-}
-
-.titulo-principal{
-  font-size:30px;
-  font-weight:700;
-  color:#d4af37;
-}
-
-.titulo-sub{
-  font-size:20px;
-  font-weight:600;
-  color:#d4af37;
-  opacity:0.85;
-}
-
-/* ===== ÍCONE NO CANTO DIREITO (CORREÇÃO PRINCIPAL) ===== */
-.info-icon{
-  position:absolute;
-  right:0;
-  top:50%;
-  transform:translateY(-50%);
-
-  width:22px;
-  height:22px;
-  border-radius:50%;
-  background:#d4af37;
-  color:black;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* ===== POPUP ===== */
-.info-box{
-  display:none;
-
-  position:absolute;
-  top:70px;
-  left:50%;
-  transform:translateX(-50%);
-
-  width:220px;
-  max-width:80vw;
-
-  background:rgba(20,20,20,0.95);
-  border:1px solid rgba(255,255,255,0.1);
-
-  padding:12px;
-  border-radius:12px;
-
-  font-size:12px;
-  text-align:center;
-  color:#d1d5db;
-
-  box-shadow:0 10px 25px rgba(0,0,0,0.6);
-  z-index:999;
-}
-</style>
-  
+  <meta name="theme-color" content="#10120f">
+  <meta name="description" content="Inscreva-se nos torneios LBX de xadrez.">
+  <title>Inscrição de Torneios | LBX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #10120f;
+      --surface: rgba(25, 28, 23, .94);
+      --surface-2: #1d211b;
+      --text: #f4f2eb;
+      --muted: #a8ada1;
+      --gold: #dfbd64;
+      --gold-bright: #f0d889;
+      --line: rgba(255,255,255,.10);
+      --green: #a9c39a;
+      --danger: #ffaaa0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 36px 18px;
+      display: grid;
+      place-items: center;
+      color: var(--text);
+      background: radial-gradient(ellipse at 16% 10%, rgba(113,129,81,.18), transparent 36%),
+                  linear-gradient(120deg, rgba(9,11,9,.94), rgba(13,15,12,.83)),
+                  url('https://images.unsplash.com/photo-1586165368502-1bad197a6461?q=80&w=1800&auto=format&fit=crop') center/cover fixed;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .layout { width: min(100%, 1010px); display: grid; grid-template-columns: 1fr 470px; align-items: center; gap: clamp(32px, 7vw, 86px); }
+    .intro { padding: 20px 0; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; margin-bottom: 34px; color: var(--gold-bright); font: 800 19px 'Manrope',sans-serif; letter-spacing: .12em; }
+    .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid rgba(223,189,100,.55); border-radius: 12px; background: rgba(223,189,100,.10); font-size: 21px; }
+    .eyebrow { margin: 0 0 14px; color: var(--gold); font-weight: 700; font-size: 12px; letter-spacing: .19em; text-transform: uppercase; }
+    h1 { max-width: 520px; margin: 0; font: 800 clamp(38px, 5.2vw, 62px)/1.04 'Manrope',sans-serif; letter-spacing: -.045em; }
+    h1 span { color: var(--gold-bright); }
+    .intro-copy { max-width: 410px; margin: 20px 0 30px; color: #c0c4b9; font-size: 16px; line-height: 1.7; }
+    .feature { display: flex; align-items: center; gap: 12px; color: #d9ddd3; font-size: 14px; }
+    .feature-icon { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: rgba(169,195,154,.12); color: var(--green); }
+    .card { position: relative; padding: 32px; border: 1px solid var(--line); border-radius: 24px; background: var(--surface); box-shadow: 0 28px 90px rgba(0,0,0,.48); backdrop-filter: blur(18px); }
+    .card-head { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom: 26px; }
+    .card h2 { margin:0; font:700 22px 'Manrope',sans-serif; letter-spacing:-.025em; }
+    .card-subtitle { margin:6px 0 0; color:var(--muted); font-size:13px; }
+    .info-wrap { position:relative; }
+    .info-icon { width:30px; height:30px; display:grid; place-items:center; border:1px solid rgba(223,189,100,.45); border-radius:50%; background:rgba(223,189,100,.12); color:var(--gold-bright); font-weight:700; cursor:pointer; }
+    .info-icon:hover, .info-icon:focus-visible { background:rgba(223,189,100,.24); outline:2px solid var(--gold); outline-offset:2px; }
+    .info-box { position:absolute; z-index:3; top:40px; right:0; width:250px; padding:15px; border:1px solid var(--line); border-radius:14px; background:#20231e; box-shadow:0 14px 35px rgba(0,0,0,.4); color:#d4d8ce; font-size:12px; line-height:1.7; }
+    .info-box[hidden] { display:none; }
+    .info-box strong { color:var(--gold-bright); }
+    .form-grid { display:grid; gap:16px; }
+    label { display:block; margin-bottom:7px; color:#d5d8d0; font-size:13px; font-weight:600; }
+    input, select { width:100%; min-height:48px; padding:0 14px; border:1px solid #34382f; border-radius:12px; background:#171a16; color:var(--text); font:500 14px 'DM Sans',sans-serif; transition:border-color .18s, box-shadow .18s, background .18s; }
+    input::placeholder { color:#777e72; }
+    input:focus, select:focus { outline:none; border-color:var(--gold); background:#1b1e19; box-shadow:0 0 0 3px rgba(223,189,100,.13); }
+    select:invalid { color:#858b7f; }
+    option { color:var(--text); background:#171a16; }
+    .helper { margin:7px 0 0; color:#8e9588; font-size:11px; }
+    .price { display:none; padding:15px 16px; border:1px solid rgba(223,189,100,.32); border-radius:14px; background:linear-gradient(110deg,rgba(223,189,100,.15),rgba(223,189,100,.05)); }
+    .price-label { display:block; margin-bottom:4px; color:#c8c9bd; font-size:12px; }
+    .price strong { color:var(--gold-bright); font:700 23px 'Manrope',sans-serif; }
+    .submit-btn, .copy-btn { width:100%; min-height:51px; border:0; border-radius:13px; background:linear-gradient(135deg,#f0d889,#c49b3f); color:#17160f; font:700 14px 'DM Sans',sans-serif; cursor:pointer; transition:transform .18s, filter .18s; }
+    .submit-btn:hover, .copy-btn:hover { transform:translateY(-1px); filter:brightness(1.06); }
+    .submit-btn:focus-visible, .copy-btn:focus-visible { outline:3px solid white; outline-offset:3px; }
+    .submit-btn:disabled { cursor:wait; opacity:.7; transform:none; }
+    .secure-note { display:flex; align-items:center; justify-content:center; gap:7px; margin:13px 0 0; color:#8e9588; font-size:11px; }
+    .payment { display:none; margin-top:23px; padding-top:23px; border-top:1px solid var(--line); text-align:center; }
+    .payment h3 { margin:0 0 5px; color:var(--gold-bright); font:700 19px 'Manrope',sans-serif; }
+    .payment-intro { margin:0 0 16px; color:var(--muted); font-size:12px; line-height:1.5; }
+    .qr-frame { display:inline-flex; padding:9px; border-radius:15px; background:#fff; box-shadow:0 8px 25px rgba(0,0,0,.25); }
+    #qrCodePix { display:block; width:min(190px, 54vw); height:auto; border-radius:8px; }
+    .payment-details { margin:16px 0 13px; padding:14px; border:1px solid var(--line); border-radius:13px; background:#171a16; color:#c4c9bf; font-size:13px; line-height:1.7; text-align:left; }
+    .payment-details b { color:var(--gold-bright); }
+    #pixKey { height:43px; min-height:43px; margin-bottom:10px; resize:none; text-align:center; color:#edf0e9; font-size:14px; letter-spacing:.04em; }
+    .copy-btn { min-height:45px; background:#d6bc73; }
+    .status { min-height:18px; margin:11px 0 0; color:var(--green); font-size:12px; }
+    .status.error { color:var(--danger); }
+    @media (max-width:760px) { body { padding:24px 16px; background-attachment:scroll; } .layout { max-width:470px; grid-template-columns:1fr; gap:8px; } .intro { padding:8px 3px 16px; } .brand { margin-bottom:21px; } h1 { font-size:clamp(35px, 10vw, 48px); } .intro-copy { margin:13px 0 17px; font-size:14px; } .feature { font-size:12px; } .card { padding:25px 22px; border-radius:20px; } }
+    @media (max-width:380px) { .card { padding:22px 17px; } .info-box { right:-2px; width:min(250px,78vw); } }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; } }
+  </style>
 </head>
-
 <body>
+  <main class="layout">
+    <section class="intro" aria-label="Apresentação da LBX">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">♞</span><span>LBX SUL DE MINAS</span></div>
+      <p class="eyebrow">Xadrez • Estratégia • Comunidade</p>
+      <p class="intro-copy">Garanta sua participação nos torneios LBX. Preencha seus dados e conclua a inscrição com pagamento via Pix.</p>
+      <div class="feature"><span class="feature-icon" aria-hidden="true">✓</span><span>Inscrição simples, rápida e segura</span></div>
+    </section>
 
-<div class="card">
+    <section class="card" aria-labelledby="formTitle">
+      <header class="card-head">
+        <div><h2 id="formTitle">Inscrição do torneio</h2><p class="card-subtitle">Preencha seus dados para continuar.</p></div>
+        <div class="info-wrap">
+          <button class="info-icon" type="button" aria-label="Informações sobre valores" aria-expanded="false" aria-controls="infoBox" onclick="toggleInfo()">i</button>
+          <div id="infoBox" class="info-box" hidden><strong>Valores de inscrição</strong><br>Escolar: R$ 30<br>Adulto: R$ 40<br><br>Após o pagamento, a inscrição é enviada automaticamente.</div>
+        </div>
+      </header>
 
-<div class="titulo">
+      <form id="formulario">
+        <div class="form-grid">
+          <div><label for="nome">Nome completo</label><input id="nome" name="nome" type="text" autocomplete="name" placeholder="Como aparece no documento" required></div>
+          <div><label for="nascimento">Data de nascimento</label><input id="nascimento" name="nascimento" type="date" autocomplete="bday" required><p class="helper">Usada para definir a categoria e o valor da inscrição.</p></div>
+          <div><label for="cadastro">Tem cadastro na LBX?</label><select id="cadastro" name="cadastro" required><option value="" selected disabled>Selecione uma opção</option><option value="sim">Sim</option><option value="nao">Não</option></select></div>
+          <div><label for="cidade">Cidade do torneio</label><select id="cidade" name="cidade" required><option value="" selected disabled>Selecione a cidade</option><option value="Itanhandu">Itanhandu - MG</option></select></div>
+          <div class="price" id="valor" aria-live="polite"><span class="price-label">Valor da inscrição</span><strong id="valorTexto"></strong></div>
+          <button class="submit-btn" id="submitBtn" type="submit">Continuar para pagamento <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="secure-note"><span aria-hidden="true">▣</span> Pagamento via Pix</p>
+      </form>
 
-  <div class="titulo-texto">
-    <div class="titulo-principal">LBX</div>
-    <div class="titulo-sub">Inscrição de Torneios</div>
-  </div>
+      <section id="pixArea" class="payment" aria-live="polite" aria-labelledby="paymentTitle">
+        <h3 id="paymentTitle">Pagamento via Pix</h3>
+        <p class="payment-intro">Escaneie o QR Code no aplicativo do seu banco<br>ou copie a chave Pix abaixo.</p>
+        <div class="qr-frame"><img id="qrCodePix" src="" alt="QR Code Pix para pagamento da inscrição"></div>
+        <div class="payment-details"><b>Titular</b><br>Nelson Roberto Junqueira Meirelles<br><br><b>Banco</b><br>Mercado Pago</div>
+        <textarea id="pixKey" readonly aria-label="Chave Pix">35997648241</textarea>
+        <button class="copy-btn" id="copyBtn" type="button" onclick="copiarPix()">Copiar chave Pix</button>
+        <p id="status" class="status" role="status"></p>
+      </section>
+    </section>
+  </main>
 
-  <span class="info-icon" onclick="toggleInfo()">i</span>
+  <script>
+    const form = document.getElementById('formulario');
+    const nascimento = document.getElementById('nascimento');
+    const valor = document.getElementById('valor');
+    const valorTexto = document.getElementById('valorTexto');
+    const pixArea = document.getElementById('pixArea');
+    const qrCode = document.getElementById('qrCodePix');
+    const submitBtn = document.getElementById('submitBtn');
+    const statusEl = document.getElementById('status');
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxoNQvoQ41R45H-Y3oU7U7FTOKQO4nS0Mzkwp051OE1KaIyrzClMyBOahpl8cWa4X21/exec';
 
-</div>
+    function calcularIdade(data) {
+      const [ano, mes, dia] = data.split('-').map(Number);
+      const hoje = new Date();
+      let idade = hoje.getFullYear() - ano;
+      if (hoje.getMonth() + 1 < mes || (hoje.getMonth() + 1 === mes && hoje.getDate() < dia)) idade--;
+      return idade;
+    }
 
- <div id="infoBox" class="info-box">
-  Valor:<br>
-  R$ 30 Escolar -
-  R$ 40 Adulto <br>
-   
-  Após o pagamento, a inscrição é feita de forma automática!<br>
-  
-</div>
-
-  <form id="formulario">
-
-    <label>Nome completo:</label>
-    <input type="text" required>
-
-    <label>Data de nascimento:</label>
-    <input type="date" id="nascimento" required>
-
-    <label>Tem cadastro na LBX?</label>
-    <select required>
-      <option value="">Selecione</option>
-      <option value="sim">Sim</option>
-      <option value="nao">Não</option>
-    </select>
-
-    <label>Cidade do torneio:</label>
-
-<select id="cidade" required>
-  <option value="">Selecione a cidade:</option>
-   <option value="Itanhandu">Itanhandu - MG</option>
-</select>
-
-    <div class="valor" id="valor" style="display:none;"></div>
-
-    <button type="submit">Ir para pagamento</button>
-
-  </form>
-
-  <div id="pixArea" style="display:none; margin-top:25px; text-align:center;">
-
-    <h2 style="color:#d4af37; margin-bottom:15px;">Pagamento Pix</h2>
-
-   <img id="qrCodePix"
-  src=""
-  style="width:230px; background:white; padding:10px; border-radius:15px;">
-
-    <div style="
-      margin-top:15px;
-      background:#1a1a1a;
-      padding:14px;
-      border-radius:12px;
-      border:1px solid #2d2d2d;
-      font-size:14px;
-      line-height:1.6;
-      color:#d1d5db;
-    ">
-
-      <b style="color:#d4af37;">Titular:</b><br>
-      Nelson Roberto Junqueira Meirelles<br><br>
-
-      <b style="color:#d4af37;">Banco:</b><br>
-      Mercado Pago
-
-    </div>
-
-    <textarea id="pixKey" readonly>35997648241</textarea>
-
-    <button onclick="copiarPix()">Copiar chave Pix</button>
-
-  </div>
-
-</div>
-
-<script>
-
-const form = document.getElementById("formulario");
-const nascimento = document.getElementById("nascimento");
-const valor = document.getElementById("valor");
-const pixArea = document.getElementById("pixArea");
-const qrCode = document.getElementById("qrCodePix");
-
-const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbxoNQvoQ41R45H-Y3oU7U7FTOKQO4nS0Mzkwp051OE1KaIyrzClMyBOahpl8cWa4X21/exec";
-
-function calcularIdade(data){
-  const hoje = new Date();
-  const nasc = new Date(data);
-
-  let idade = hoje.getFullYear() - nasc.getFullYear();
-
-  const mes = hoje.getMonth() - nasc.getMonth();
-
-  if(mes < 0 || (mes === 0 && hoje.getDate() < nasc.getDate())){
-    idade--;
-  }
-
-  return idade;
-}
-
-form.addEventListener("submit", async function(e){
-
-  e.preventDefault();
-
-  const nome = form.querySelector('input[type="text"]').value;
-  const dataNascimento = nascimento.value;
-  const cadastro = form.querySelectorAll("select")[0].value;
-  const cidade = document.getElementById("cidade").value;
-
-  const anoNascimento = new Date(dataNascimento).getFullYear();
-  const anoAtual = new Date().getFullYear();
-
-  let preco = 30;
-
-  if((anoAtual - anoNascimento) >= 18){
-    preco = 40;
-  }
-
-  valor.style.display = "block";
-  valor.innerHTML = `Valor da inscrição: R$ ${preco}`;
-
-  if(preco === 30){
-
-    qrCode.src = "https://i.ibb.co/RpcqNTsm/IMG-0677.jpg";
-
-  }else{
-
-    qrCode.src = "https://i.ibb.co/BHfDHrtL/IMG-0676.jpg";
-
-  }
-
-  pixArea.style.display = "block";
-
-  try{
-
-    const resposta = await fetch(SCRIPT_URL, {
-      method: "POST",
-      body: JSON.stringify({
-        nome: nome,
-        nascimento: dataNascimento,
-        cadastro: cadastro,
-        cidade: cidade,
-        valor: preco
-      })
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      const dataNascimento = nascimento.value;
+      if (calcularIdade(dataNascimento) < 0) {
+        nascimento.setCustomValidity('A data de nascimento não pode estar no futuro.');
+        nascimento.reportValidity();
+        nascimento.setCustomValidity('');
+        return;
+      }
+      const nome = document.getElementById('nome').value.trim();
+      const cadastro = document.getElementById('cadastro').value;
+      const cidade = document.getElementById('cidade').value;
+      const preco = calcularIdade(dataNascimento) >= 18 ? 40 : 30;
+      valorTexto.textContent = `R$ ${preco},00`;
+      valor.style.display = 'block';
+      qrCode.src = preco === 30 ? 'https://i.ibb.co/RpcqNTsm/IMG-0677.jpg' : 'https://i.ibb.co/BHfDHrtL/IMG-0676.jpg';
+      pixArea.style.display = 'block';
+      statusEl.textContent = 'Enviando seus dados…';
+      statusEl.classList.remove('error');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando inscrição…';
+      try {
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          body: JSON.stringify({ nome, nascimento: dataNascimento, cadastro, cidade, valor: preco })
+        });
+        statusEl.textContent = 'Dados enviados. Conclua o pagamento para confirmar sua inscrição.';
+      } catch (err) {
+        statusEl.textContent = 'Não foi possível confirmar o envio dos dados. Confira sua conexão e tente novamente.';
+        statusEl.classList.add('error');
+        console.error(err);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Continuar para pagamento <span aria-hidden="true">→</span>';
+      }
+      pixArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
 
-  }catch(err){
+    async function copiarPix() {
+      const pix = document.getElementById('pixKey');
+      try {
+        await navigator.clipboard.writeText(pix.value);
+      } catch (_) {
+        pix.select();
+        document.execCommand('copy');
+      }
+      statusEl.textContent = 'Chave Pix copiada.';
+      statusEl.classList.remove('error');
+    }
 
-    alert("ERRO FETCH: " + err);
-
-    console.log(err);
-    console.error(err);
-
-  }
-
-});
-
-function copiarPix(){
-
-  const pix = document.getElementById("pixKey");
-
-  pix.select();
-
-  navigator.clipboard.writeText(pix.value);
-
-  alert("Chave Pix copiada!");
-}
-
-function toggleInfo(){
-
-  const box = document.getElementById("infoBox");
-
-  if(box.style.display === "block"){
-
-    box.style.display = "none";
-
-  }else{
-
-    box.style.display = "block";
-
-  }
-}
-
-</script>
-
+    function toggleInfo() {
+      const box = document.getElementById('infoBox');
+      const button = document.querySelector('.info-icon');
+      box.hidden = !box.hidden;
+      button.setAttribute('aria-expanded', String(!box.hidden));
+    }
+    document.addEventListener('click', (event) => {
+      const wrap = document.querySelector('.info-wrap');
+      if (!wrap.contains(event.target)) {
+        document.getElementById('infoBox').hidden = true;
+        document.querySelector('.info-icon').setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
 </body>
 </html>
